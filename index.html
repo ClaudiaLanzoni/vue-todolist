@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link importazione Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Link importazione Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    
+    
+
+    <title>Vue To-do list</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h1 class="mb-3">To-do list to make a to-do list work</h1>
+
+                    <input type="text" placeholder="Insert a new step" v-model="toDoField" @keyup.enter="addToDoElement">
+
+                    <button @click="addToDoElement">Add a new step</button>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li v-for="(element, index) in toDoList"><i class="fas fa-robot"></i>
+                            {{element}} 
+                    
+                            <i class="fas fa-times fa-1x d-flex justify-content-center icon_position" @click="removeToDoElement (index)"></i>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="javascript/myscript.js"></script>
+</body>
+</html>

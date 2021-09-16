@@ -17,20 +17,30 @@ let app = new Vue ({
         "Predisporre input bottone per aggiungere un nuovo item alla lista",
         "Cliccando sul bottone, il testo digitato sarà aggiunto alla lista"],
         
-        toDoField: "",
+        inputLine: "",
+
+        deleteClicked: false
     },
 
     methods: {
-        removeToDoElement: function(elementIndex) {
-            this.toDoList.splice(elementIndex, 1);
+        removeElementFromList: function(elementIndex) {
+            this.toDoList.splice(elementIndex, 1); //attenzione splice modifica array
             },
         
 
-        addToDoElement: function() {
-            if (this.toDoField.trim('').length > 0) {
-                this.toDoList.push(this.toDoField.trim(''));
+        addElementToList: function() {
+            if (this.inputLine.trim('').length > 0) {
+                this.toDoList.push(this.inputLine.trim(''));
             }
+        },
+        
+        createLineThrough(elementIndex) {
+          if (this.toDoList[elementIndex]) {
+            this.deleteClicked = true;
         }
+        },
+
+        
 
     }
 })

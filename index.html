@@ -29,18 +29,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h1 class="mb-3">To-do list to make a to-do list work</h1>
+                    <h1 class="mb-3">To-do list to create a to-do list</h1>
 
-                    <input type="text" placeholder="Insert a new step" v-model="toDoField" @keyup.enter="addToDoElement">
+                    <input type="text" placeholder="Insert a new step" v-model="inputLine" @keyup.enter="addElementToList">
 
-                    <button @click="addToDoElement">Add a new step</button>
+                    <button @click="addElementToList">Add a new step</button>
                 </div>
                 <div class="col-12">
                     <ul>
-                        <li v-for="(element, index) in toDoList"><i class="fas fa-robot"></i>
+                        <li v-for="(element, index) in toDoList" :class="{ my_line_decoration : deleteClicked }"><i class="fas fa-robot"></i>
                             {{element}} 
                     
-                            <i class="fas fa-times fa-1x d-flex justify-content-center icon_position" @click="removeToDoElement (index)"></i>
+                            <i class="fas fa-times fa-1x d-flex justify-content-center icon_position" @click="createLineThrough(index)" ></i><!--"removeElementFromList(index)"-->
                             
                         </li>
                     </ul>

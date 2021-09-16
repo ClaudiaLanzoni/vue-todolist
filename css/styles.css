@@ -5,9 +5,16 @@ body {
 li {
     list-style: none;
     line-height: 30px;
-    /*text-decoration-line: line-through;*/
 }
 
 .icon_position {
     margin-top: -20px;
+}
+
+.my_line_decoration {
+    text-decoration-line: line-through;
+}
+
+.my_none_decoration {
+    text-decoration-line: none;
 }
